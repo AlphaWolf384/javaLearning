@@ -1,4 +1,5 @@
 # javaLearning
 
 JKL - App Development for SWF
-v - 0.3 BETA
+JKL_Bravo - JKL is being used as base for development and Bravo will be continued for developing into advanced and complex solutions.
+
