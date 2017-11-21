@@ -67,6 +67,7 @@ public class MainScreen extends JFrame {
 	
 	//static DefaultTableModel model = (DefaultTableModel) table.getModel();
 	static DefaultTableModel model;
+	private JTextField USBField;
 
 	/**
 	 * Launch the application.
@@ -139,7 +140,7 @@ public class MainScreen extends JFrame {
 		contentPane.setLayout(null);
 
 		JScrollPane scrollPane = new JScrollPane();
-		scrollPane.setBounds(130, 14, 744, 537);
+		scrollPane.setBounds(12, 85, 862, 466);
 		contentPane.add(scrollPane);
 		table = new JTable();
 		table.setRowSelectionAllowed(false);
@@ -166,7 +167,7 @@ public class MainScreen extends JFrame {
 		
 		JLabel lblPing = new JLabel("Ping");
 		lblPing.setHorizontalAlignment(SwingConstants.CENTER);
-		lblPing.setBounds(12, 118, 89, 23);
+		lblPing.setBounds(669, 44, 89, 23);
 		contentPane.add(lblPing);
 		
 		JLabel lblTitle = new JLabel("JKL Server");
@@ -185,7 +186,7 @@ public class MainScreen extends JFrame {
 				}
 			}
 		});
-		btnData.setBounds(12, 84, 89, 23);
+		btnData.setBounds(669, 10, 89, 23);
 		contentPane.add(btnData);
 		
 		JButton btnImport = new JButton("Import");
@@ -199,7 +200,7 @@ public class MainScreen extends JFrame {
 				}
 			}
 		});
-		btnImport.setBounds(12, 487, 98, 26);
+		btnImport.setBounds(776, 10, 98, 26);
 		contentPane.add(btnImport);
 		
 		JButton btnExport = new JButton("Export");
@@ -213,8 +214,41 @@ public class MainScreen extends JFrame {
 				}
 			}
 		});
-		btnExport.setBounds(12, 525, 98, 26);
+		btnExport.setBounds(776, 48, 98, 26);
 		contentPane.add(btnExport);
+		
+		USBField = new JTextField();
+		USBField.setToolTipText("");
+		USBField.setBounds(105, 31, 546, 20);
+		contentPane.add(USBField);
+		USBField.setColumns(10);
+		USBField.addActionListener(new ActionListener() {
+			@Override
+			public void actionPerformed(ActionEvent arg0) {
+				// TODO Auto-generated method stub
+				message = USBField.getText();
+				LocalDateTime Timestamp = LocalDateTime.now();
+				System.out.printf("Scanned: " + message);
+				System.out.println("");
+				System.out.println(Timestamp);
+				System.out.println("");
+			
+				row[0] = message.toString();
+				row[1] = Timestamp;
+			
+				model.addRow(row);
+				try {
+				    Thread.sleep(100);                 //1000 milliseconds is one second.
+				} catch(InterruptedException ex) {
+				    Thread.currentThread().interrupt();
+				}
+				USBField.setText("");
+			}
+		});
+			
+		JLabel lblTitle2 = new JLabel("Enter the Data Below via App or USB Scanner");
+		lblTitle2.setBounds(105, 10, 546, 16);
+		contentPane.add(lblTitle2);
 		
 		// IP Address and Host Port Info
 		try {
