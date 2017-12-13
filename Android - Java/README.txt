@@ -30,9 +30,6 @@ Features
 - JKL_Bravo
 - MyFirstApp
 - ScannerApp
-- ToDo
-- Tutorial1
-- Tutorial2
 
 Installation
 ------------
@@ -76,21 +73,6 @@ will display whatever I said in the message bar.  I used this in JKL_Bravo for d
 This is scrap code created from BarcodeTest and I tried to improve it without libraries to use different
 method.  This is failed attempted and abandoned same time as BarcodeTest.
 
--> ToDo *ABANDONED*
-
-I was attempting to create ToDo List to add and delete rows in the list as feature testing for
-JKL_Bravo.  I ran out of time and moved on to work on Server Socket between Android and Computer.
-This is abandoned for now.
-
--> Tutorial1
-
-Same as MyFirstApp.
-
--> Tutorial2
-
-This is Computer Science tutorial that I learned right after writing MyFirstApp.  So I made two buttons
-with random numbers to see which one has higher number to get points.  I learned this so I can
-incorporate multiple buttons at the same time as I can make JKL_Bravo happening.
 
 License
 -------
